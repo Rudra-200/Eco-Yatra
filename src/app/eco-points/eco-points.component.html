@@ -1,0 +1,30 @@
+<ActionBar title="Eco Points & Rewards" class="action-bar">
+  <NavigationButton text="Back" android.systemIcon="ic_menu_back"></NavigationButton>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout class="page">
+    <GridLayout rows="auto, auto" columns="*, *" class="stats-container m-t-20">
+      <Label text="Total Eco Points" row="0" col="0" class="text-center"></Label>
+      <Label [text]="totalEcoPoints" row="1" col="0" class="h1 text-center text-primary"></Label>
+      
+      <Label text="Next Reward At" row="0" col="1" class="text-center"></Label>
+      <Label [text]="nextRewardAt" row="1" col="1" class="h2 text-center text-success"></Label>
+    </GridLayout>
+
+    <ProgressBar [value]="progressToNextReward" maxValue="100" class="progress-bar m-t-10"></ProgressBar>
+    <Label [text]="'You\'re ' + pointsToNextReward + ' points away from your next reward!'" class="text-center m-t-10"></Label>
+
+    <Label text="Rewards Catalog" class="h2 text-center m-t-30"></Label>
+    <ListView [items]="rewards" class="list-group">
+      <ng-template let-reward="item">
+        <GridLayout rows="auto, auto" columns="*, auto" class="list-group-item">
+          <Label [text]="reward.name" row="0" col="0" class="list-group-item-heading"></Label>
+          <Label [text]="reward.points + ' points'" row="0" col="1" class="list-group-item-text text-right"></Label>
+          <Label [text]="reward.description" row="1" col="0" class="list-group-item-text text-muted"></Label>
+          <Button text="Redeem" (tap)="onRedeemReward(reward)" [isEnabled]="totalEcoPoints >= reward.points" row="1" col="1" class="btn btn-primary btn-rounded-sm"></Button>
+        </GridLayout>
+      </ng-template>
+    </ListView>
+  </StackLayout>
+</ScrollView>

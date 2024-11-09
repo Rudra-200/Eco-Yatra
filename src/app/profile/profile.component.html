@@ -1,0 +1,43 @@
+<ActionBar title="My Profile" class="action-bar">
+  <NavigationButton text="Back" android.systemIcon="ic_menu_back"></NavigationButton>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout class="page">
+    <Image src="~/app/assets/profile-placeholder.png" class="profile-image"></Image>
+    <Label [text]="userName" class="h2 text-center m-t-10"></Label>
+    <Label [text]="'Member since ' + memberSince" class="text-center text-muted"></Label>
+
+    <GridLayout rows="auto, auto, auto" columns="*, *" class="stats-container m-t-20">
+      <Label text="Total Trips" row="0" col="0" class="text-center"></Label>
+      <Label [text]="totalTrips" row="1" col="0" class="h2 text-center"></Label>
+      
+      <Label text="Total CO2 Saved" row="0" col="1" class="text-center"></Label>
+      <Label [text]="totalCO2Saved + ' kg'" row="1" col="1" class="h2 text-center"></Label>
+      
+      <Label text="Total Distance" row="2" col="0" class="text-center"></Label>
+      <Label [text]="totalDistance + ' km'" row="3" col="0" class="h2 text-center"></Label>
+      
+      <Label text="Eco Points" row="2" col="1" class="text-center"></Label>
+      <Label [text]="ecoPoints" row="3" col="1" class="h2 text-center"></Label>
+    </GridLayout>
+
+    <StackLayout class="hr-light m-t-20 m-b-20"></StackLayout>
+
+    <Label text="Achievements" class="h3 m-l-15"></Label>
+    <ListView [items]="achievements" class="list-group">
+      <ng-template let-achievement="item">
+        <GridLayout rows="auto" columns="auto, *" class="list-group-item">
+          <Label [text]="achievement.icon" class="achievement-icon fas" row="0" col="0"></Label>
+          <StackLayout row="0" col="1" class="m-l-15">
+            <Label [text]="achievement.name" class="list-group-item-heading"></Label>
+            <Label [text]="achievement.description" class="list-group-item-text text-muted"></Label>
+          </StackLayout>
+        </GridLayout>
+      </ng-template>
+    </ListView>
+
+    <Button text="Edit Profile" (tap)="onEditProfile()" class="btn btn-primary m-t-20"></Button>
+    <Button text="Preferences" (tap)="onPreferences()" class="btn btn-outline m-t-10"></Button>
+  </StackLayout>
+</ScrollView>

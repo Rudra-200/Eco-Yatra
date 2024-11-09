@@ -1,0 +1,52 @@
+<ActionBar title="Challenges & Leaderboard" class="action-bar">
+  <NavigationButton text="Back" android.systemIcon="ic_menu_back"></NavigationButton>
+</ActionBar>
+
+<TabView selectedIndex="0" androidTabsPosition="bottom">
+  <StackLayout *tabItem="{title: 'Challenges'}">
+    <ScrollView>
+      <StackLayout class="page">
+        <Label text="Active Challenges" class="h2 text-center m-t-20"></Label>
+        <ListView [items]="activeChallenges" class="list-group">
+          <ng-template let-challenge="item">
+            <GridLayout rows="auto, auto" columns="*, auto" class="list-group-item">
+              <Label [text]="challenge.name" row="0" col="0" class="list-group-item-heading"></Label>
+              <Label [text]="challenge.reward + ' points'" row="0" col="1" class="list-group-item-text text-right text-success"></Label>
+              <Label [text]="challenge.description" row="1" col="0" class="list-group-item-text text-muted"></Label>
+              <ProgressBar [value]="challenge.progress" maxValue="100" row="1" col="1" width="60" class="progress-bar"></ProgressBar>
+            </GridLayout>
+          </ng-template>
+        </ListView>
+
+        <Label text="Upcoming Challenges" class="h2 text-center m-t-20"></Label>
+        <ListView [items]="upcomingChallenges" class="list-group">
+          <ng-template let-challenge="item">
+            <GridLayout rows="auto, auto" columns="*, auto" class="list-group-item">
+              <Label [text]="challenge.name" row="0" col="0" class="list-group-item-heading"></Label>
+              <Label [text]="challenge.reward + ' points'" row="0" col="1" class="list-group-item-text text-right text-success"></Label>
+              <Label [text]="challenge.description" row="1" col="0" class="list-group-item-text text-muted"></Label>
+              <Label [text]="'Starts: ' + challenge.startDate" row="1" col="1" class="list-group-item-text text-right"></Label>
+            </GridLayout>
+          </ng-template>
+        </ListView>
+      </StackLayout>
+    </ScrollView>
+  </StackLayout>
+
+  <StackLayout *tabItem="{title: 'Leaderboard'}">
+    <ScrollView>
+      <StackLayout class="page">
+        <Label text="Top Eco Warriors" class="h2 text-center m-t-20"></Label>
+        <ListView [items]="leaderboard" class="list-group">
+          <ng-template let-user="item" let-i="index">
+            <GridLayout rows="auto" columns="auto, *, auto" class="list-group-item">
+              <Label [text]="i + 1" class="list-group-item-text text-muted" row="0" col="0"></Label>
+              <Label [text]="user.name" class="list-group-item-heading m-l-10" row="0" col="1"></Label>
+              <Label [text]="user.points + ' points'" class="list-group-item-text text-right text-success" row="0" col="2"></Label>
+            </GridLayout>
+          </ng-template>
+        </ListView>
+      </StackLayout>
+    </ScrollView>
+  </StackLayout>
+</TabView>

@@ -1,0 +1,48 @@
+<ActionBar title="EcoYatra Dashboard" class="action-bar">
+  <NavigationButton visibility="collapsed"></NavigationButton>
+  <ActionItem ios.position="right" android.position="actionBar">
+    <Label text="&#xf013;" class="fas"></Label>
+  </ActionItem>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout class="page">
+    <GridLayout rows="auto, auto, auto, auto" columns="*, *" class="m-t-20">
+      <Label text="Air Quality Index" row="0" col="0" class="h3"></Label>
+      <Label [text]="airQualityIndex" row="0" col="1" class="h2 text-right" [ngClass]="getAirQualityClass()"></Label>
+      
+      <Label text="Traffic Condition" row="1" col="0" class="h3"></Label>
+      <Label [text]="trafficCondition" row="1" col="1" class="h2 text-right" [ngClass]="getTrafficClass()"></Label>
+    </GridLayout>
+
+    <StackLayout class="hr-light m-t-20 m-b-20"></StackLayout>
+
+    <GridLayout rows="auto, auto" columns="*, *" class="stats-container">
+      <Label text="CO2 Saved Today" row="0" col="0" class="text-center"></Label>
+      <Label [text]="co2SavedToday + ' kg'" row="1" col="0" class="h2 text-center"></Label>
+      
+      <Label text="Eco Points" row="0" col="1" class="text-center"></Label>
+      <Label [text]="ecoPoints" row="1" col="1" class="h2 text-center"></Label>
+    </GridLayout>
+
+    <Button text="Plan Your Route" (tap)="onPlanRoute()" class="btn btn-primary m-t-20"></Button>
+
+    <Label text="Today's Challenge" class="h3 m-t-20"></Label>
+    <Label [text]="dailyChallenge" class="body m-b-10"></Label>
+    <ProgressBar [value]="challengeProgress" maxValue="100" class="progress-bar"></ProgressBar>
+
+    <Button text="View Leaderboard" (tap)="onViewLeaderboard()" class="btn btn-outline m-t-20"></Button>
+
+    <Label text="Recent Trips" class="h3 m-t-20"></Label>
+    <ListView [items]="recentTrips" class="list-group">
+      <ng-template let-trip="item">
+        <GridLayout rows="auto, auto" columns="*, auto" class="list-group-item">
+          <Label [text]="trip.date" row="0" col="0" class="list-group-item-heading"></Label>
+          <Label [text]="trip.distance + ' km'" row="0" col="1" class="list-group-item-text text-right"></Label>
+          <Label [text]="trip.ecoPointsEarned + ' points'" row="1" col="0" class="list-group-item-text text-muted"></Label>
+          <Label [text]="trip.co2Saved + ' kg CO2 saved'" row="1" col="1" class="list-group-item-text text-right text-muted"></Label>
+        </GridLayout>
+      </ng-template>
+    </ListView>
+  </StackLayout>
+</ScrollView>

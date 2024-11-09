@@ -1,0 +1,34 @@
+<ActionBar title="Plan Your Route" class="action-bar">
+  <NavigationButton text="Back" android.systemIcon="ic_menu_back"></NavigationButton>
+</ActionBar>
+
+<GridLayout rows="auto, *, auto">
+  <StackLayout row="0" class="p-10">
+    <GridLayout rows="auto, auto" columns="*, *" class="form">
+      <TextField hint="Start Location" row="0" col="0" class="input input-border"></TextField>
+      <TextField hint="End Location" row="0" col="1" class="input input-border"></TextField>
+      <Button text="Find Routes" (tap)="onFindRoutes()" row="1" colSpan="2" class="btn btn-primary m-t-10"></Button>
+    </GridLayout>
+  </StackLayout>
+
+  <ContentView row="1" class="map-container">
+    <!-- Placeholder for map view -->
+    <Label text="Map View" class="h2 text-center"></Label>
+  </ContentView>
+
+  <ListView row="2" [items]="routes" class="list-group">
+    <ng-template let-route="item">
+      <GridLayout rows="auto, auto" columns="auto, *, auto" class="list-group-item">
+        <Label [text]="getTransportIcon(route.mode)" row="0" rowSpan="2" col="0" class="transport-icon fas"></Label>
+        <Label [text]="route.name" row="0" col="1" class="list-group-item-heading"></Label>
+        <Label [text]="route.duration" row="0" col="2" class="list-group-item-text text-right"></Label>
+        <StackLayout row="1" col="1" orientation="horizontal">
+          <Label [text]="route.distance + ' km'" class="list-group-item-text text-muted"></Label>
+          <Label text=" | " class="text-muted"></Label>
+          <Label [text]="route.co2Saved + ' kg CO2 saved'" class="list-group-item-text text-muted"></Label>
+        </StackLayout>
+        <Label [text]="route.ecoPoints + ' points'" row="1" col="2" class="list-group-item-text text-right text-success"></Label>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>

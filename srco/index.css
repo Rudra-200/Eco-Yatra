@@ -1,0 +1,19 @@
+:root {
+  --mantine-color-green: #2ecc71;
+  --mantine-color-teal: #1abc9c;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f9fa;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #2c3e50;
+}
+
+.eco-gradient {
+  background: linear-gradient(135deg, var(--mantine-color-green) 0%, var(--mantine-color-teal) 100%);
+}

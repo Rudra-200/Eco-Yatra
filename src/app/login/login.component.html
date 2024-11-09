@@ -1,0 +1,19 @@
+<ActionBar title="EcoYatra" class="action-bar">
+  <Label text="EcoYatra" class="action-bar-title"></Label>
+</ActionBar>
+
+<StackLayout class="page">
+  <Image src="~/app/assets/ecoyatra-logo.png" class="logo"></Image>
+  <Label text="Start your green journey with EcoYatra" class="h2 text-center m-t-30 m-b-30"></Label>
+  
+  <TextField hint="Email" keyboardType="email" autocorrect="false" autocapitalizationType="none" class="input input-border"></TextField>
+  <TextField hint="Password" secure="true" class="input input-border"></TextField>
+  
+  <Button text="Sign In" (tap)="onSignIn()" class="btn btn-primary"></Button>
+  <Button text="Sign In with Social Media" (tap)="onSocialSignIn()" class="btn btn-outline"></Button>
+  
+  <Label text="Don't have an account?" class="text-center m-t-20"></Label>
+  <Button text="Register" (tap)="onRegister()" class="btn btn-outline"></Button>
+  
+  <Button text="Skip for now" (tap)="onSkip()" class="btn btn-text"></Button>
+</StackLayout>
