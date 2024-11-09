@@ -1,11 +1,11 @@
 # EcoYatra - Inspiring the journey to a greener future. 🌍
 
-Eco-YATRA is a sustainable transportation app designed to promote eco-friendly travel, reduce carbon emissions, and enhance user engagement through gamification. It provides real-time insights, emission tracking, optimized route suggestions, and community-driven challenges to encourage sustainable transport choices.
+EcoYatra is a sustainable transportation app designed to promote eco-friendly travel, reduce carbon emissions, and enhance user engagement through gamification. It provides real-time insights, emission tracking, optimized route suggestions, and community-driven challenges to encourage sustainable transport choices.
 
 ## Key Features ✨
 
 - **Eco-Points Tracking**: Users can earn eco-points based on their travel choices, incentivizing eco-friendly transportation.
-- **Route Optimization**: Eco-YATRA suggests routes that minimize carbon emissions based on real-time traffic and environmental data.
+- **Route Optimization**: EcoYatra suggests routes that minimize carbon emissions based on real-time traffic and environmental data.
 - **Gamification**: Engage users with rewards, levels, and challenges for adopting sustainable practices.
 - **Weather-Adaptive Recommendations**: Travel recommendations adapt to weather conditions, helping users plan safer and more efficient routes.
 - **Emission Tracking**: Real-time carbon emission monitoring helps users understand their environmental impact.
@@ -21,14 +21,14 @@ Eco-YATRA is a sustainable transportation app designed to promote eco-friendly t
 
 ## Deployment on Vultr 🚀
 
-Eco-YATRA is deployed on Vultr, which provides a reliable and scalable environment for our application. Here’s how we utilized Vultr's services to bring Eco-YATRA to life:
+EcoYatra is deployed on Vultr, which provides a reliable and scalable environment for our application. Here’s how we utilized Vultr's services to bring EcoYatra to life:
 
 1. **Vultr Instances**: We used Vultr's cloud instances to host our backend server and MongoDB database. This allows for scalable handling of user requests and data storage.
 2. **Load Balancer**: To manage traffic efficiently, we leveraged Vultr's load balancing feature, ensuring the app can handle high traffic without downtime.
 3. **Storage Solutions**: Vultr's block storage was used to manage our application's media and data assets, enabling faster load times and better data management.
 4. **Security**: Vultr’s firewall and security options were configured to protect user data and ensure a secure deployment environment.
 
-### Steps to Deploy Eco-YATRA on Vultr
+### Steps to Deploy EcoYatra on Vultr
 
 1. **Create a Vultr Account**: Sign up at [Vultr](https://www.vultr.com/) and select the appropriate cloud compute instance.
 2. **Set Up Environment**:
@@ -49,7 +49,7 @@ Eco-YATRA is deployed on Vultr, which provides a reliable and scalable environme
 Here is a high-level overview of the project structure:
 
 ```plaintext
-Eco-YATRA/
+EcoYatra/
 ├── src/
 │   ├── app/
 │   │   ├──dashboard/
@@ -77,13 +77,13 @@ Eco-YATRA/
 
 ## Installation and Setup 🚧
 
-To run Eco-YATRA locally, follow these steps:
+To run EcoYatra locally, follow these steps:
 
 ### Clone the Repository:
 
 ```bash
-git clone https://github.com/your-username/Eco-YATRA.git
-cd Eco-YATRA
+git clone https://github.com/Rudra-200/EcoYatra.git
+cd EcoYatra
 ```
 # Installation Guide
 
@@ -93,7 +93,7 @@ npm install
 ```
 ## Setting Up Eco-YATRA
 
-This guide will walk you through setting up and running the Eco-YATRA application.
+This guide will walk you through setting up and running the EcoYatra application.
 
 ### Environment Variables
 
@@ -107,20 +107,20 @@ This guide will walk you through setting up and running the Eco-YATRA applicatio
 
 1. **Open a terminal:** Launch a terminal window in your project directory.
 
-2. **Start the application:** Run the following command to start the Eco-YATRA application using npm:
+2. **Start the application:** Run the following command to start the EcoYatra application using npm:
 
 ```bash
 npm start
 ```
-# Eco-YATRA Application
+# EcoYatra Application
 
 ## Accessing the Application
-Open your web browser and navigate to [http://localhost:3000](http://localhost:3000) to access the Eco-YATRA application running on your local development server.
+Open your web browser and navigate to [http://localhost:3000](http://localhost:3000) to access the EcoYatra application running on your local development server.
 
 ## Contributing
-We encourage contributions to improve Eco-YATRA! To contribute:
+We encourage contributions to improve EcoYatra! To contribute:
 
-1. **Fork the repository**: Create a fork of the Eco-YATRA repository on your preferred version control platform (e.g., GitHub).
+1. **Fork the repository**: Create a fork of the EcoYatra repository on your preferred version control platform (e.g., GitHub).
 2. **Make changes**: Make your desired modifications to the codebase.
 3. **Submit a pull request**: Create a pull request to submit your changes for review and potential inclusion in the main repository.
 
