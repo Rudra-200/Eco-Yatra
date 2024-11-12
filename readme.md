@@ -128,5 +128,6 @@ We encourage contributions to improve EcoYatra! To contribute:
 Eco-YATRA is licensed under the GNU License. For full details, refer to the `LICENSE` file within the project directory.
 
 ## Contact
-For any questions or support regarding Eco-YATRA, feel free to contact us at [rudramishrassd.2635@gmail.com](mailto:rudramishrassd.2635@gmail.com).
+For any questions or support regarding Eco-YATRA, feel free to contact us at [vkdasari.1779@gmail.com](mailto:vkdasari.1779@gmail.com) ,
+[rudramishrassd.2635@gmail.com](mailto:rudramishrassd.2635@gmail.com) , [indigibilli91@gmail.com](mailto:indigibilli91@gmail.com).
 
